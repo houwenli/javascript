@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+      var LikeButton = React.createClass({
+        getInitialState:function(){
+          return {liked:false};
+        },
+        handdleClick:function(event){
+          this.setState({liked:!this.state.liked});
+        },
+        render:function(){
+          var text = this.state.liked?"喜欢":"不喜欢"; 
+          return <h2 onClick={this.handdleClick}>你<span>{text}</span>我，点击切换状态</h2>
+        }
+      });
+
+      ReactDOM.render(
+        <LikeButton />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var arr =['数组1','数组2'];
+      var i=1;
+      ReactDOM.render(
+        <div>
+          <h1>欢迎学习：</h1>
+          <h2>reactjs教程</h2>
+          {/*我是注释，但我必须放在花括号里面*/}
+          <h3>{2*3}</h3>
+          <h3></h3>
+          <div>{i==0?false:true}</div>
+          <div>{arr}</div>
+          <span data-message="hhahaha">哈哈哈哈哈</span>
+        </div>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

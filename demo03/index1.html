@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+      var Name = React.createClass({
+        render:function(){
+          return <h1>{this.props.name}</h1>
+        }
+      });
+
+      var Link = React.createClass({
+        render:function(){
+          return <a href={this.props.href}>this.props.href</a>
+        }
+      });
+
+      var Website = React.createClass({
+        render:function(){
+          return (
+            <div>
+              <Name name={this.props.name}/>
+              <Link href={this.props.href}/>
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <Website name="hahah" href="http:bbs.360.cn" />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
