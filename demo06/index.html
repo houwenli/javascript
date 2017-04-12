@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+  	<!--setState replaceState  setProps  replaceProps   fouceUpdate   findDOMNode    isMounted-->
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+    	var Counter = React.createClass({
+    		getInitialState:function(){
+    			return {
+    				count:1
+    			}
+    		},
+    		getDefaultProps:function(){
+    			return {
+    				name:'qiaoqiao'
+    			}
+    		},
+    		handleClick:function(){
+    			/*this.setState({count:this.state.count+1},function(state){
+    				console.log(this.state)
+    				return{count:this.state.count+1,count1:this.state.count+2}
+    			});
+    			this.replaceState({count1:20});
+    			this.setProps({
+    				name:'qiaoxuejiao'
+    			});*/
+    			this.replaceProps({sex:'男'});
+    		},
+			render:function(){
+				return <h1 onClick={this.handleClick}>点击次数为{this.state.count},hahah{this.state.count1},名字是{this.props.name},性别是{this.props.sex}</h1>
+			}
+    	});
+    	ReactDOM.render(
+    		<Counter />,
+    		document.getElementById('example')
+    	);
+    </script>
+  </body>
+</html>

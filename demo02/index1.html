@@ -7,6 +7,29 @@
   </head>
   <body>
     <div id="example"></div>
-    <script type="text/babel" src="separator.js"></script>
+    <script type="text/babel">
+    var NotesList = React.createClass({
+    	var arr = ['数组1','数组2']
+      render: function() {
+        return (
+          <ol>
+          {
+            arr.map(this.props.children, function (child) {
+              return <li>{child}</li>;
+            })
+          }
+          </ol>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <NotesList>
+        <span>hello</span>
+        <span>world</span>
+      </NotesList>,
+      document.getElementById('example')
+    );
+    </script>
   </body>
 </html>

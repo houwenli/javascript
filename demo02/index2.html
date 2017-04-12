@@ -18,7 +18,13 @@
           <h3>{2*3}</h3>
           <h3></h3>
           <div>{i==0?false:true}</div>
-          <div>{arr}</div>
+          <div>
+            {
+              arr.map(function(everyEle){
+                return <p>hahhahahah{everyEle}</p>
+              })
+            }
+          </div>
           <span data-message="hhahaha">哈哈哈哈哈</span>
         </div>,
         document.getElementById('example')

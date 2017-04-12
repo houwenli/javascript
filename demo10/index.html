@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+  </head>
+  <body>
+  	
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+    var Mycomponent = React.createClass({
+    	getInitialState:function(){
+    		return {
+    			name:'hahha'
+    		}
+    	},
+    	getFocus:function(){
+    		this.refs.myinput.focus();
+    	},
+    	render:function(){
+    		return (
+    			<div>
+    				<input type="text" value="" ref="myinput"/>
+    				<input type="button" value="点我" onClick={this.getFocus}/>
+    			</div>
+    		);
+    	}
+    });
+    ReactDOM.render(
+    	<Mycomponent/>,
+    	document.getElementById('example')
+    );
+    </script>
+  </body>
+</html>

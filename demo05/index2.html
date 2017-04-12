@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+    	var title = "你是猪";
+    	var name = 121;
+    	var MyTitle = React.createClass({
+    		getInitialState:function(){
+    			return {
+    				liked:true,
+    				age:23
+    			}
+    		},
+    		getDefaultProps:function(){
+    			return {
+    				name:111
+    			};
+    		},
+    		haddleClick:function(){
+    			this.setState({liked:!this.state.liked,age:this.state.age});
+    		},
+    		propTypes: {
+    			name:React.PropTypes.string.isRequired
+    		},
+    		render:function(){
+    			var text = this.state.liked?"喜欢":"不喜欢";
+    			return <h1 onClick={this.haddleClick}>我{text}你，{this.props.name}，{this.state.age}</h1>
+    		}
+    	});
+    	ReactDOM.render(
+    		<MyTitle name={name}/>,
+    		document.getElementById('example')
+    	);
+    </script>
+  </body>
+</html>

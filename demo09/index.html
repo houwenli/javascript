@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+  </head>
+  <body>
+  	
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+    var HelloMessage = React.createClass({
+
+    	getInitialState:function(){
+    		return {
+    			value : "hhahahah"
+    		}
+    	},
+
+    	handdleChange : function(event){
+    		this.setState({
+    			value:event.target.value
+    		})
+    	},
+
+    	render:function(){
+    		var value = this.state.value;
+    		return (
+    			<div>
+    				<input value={value} onChange={this.handdleChange}/>
+    				<h1>{value}</h1>
+    			</div>
+    		);
+    	}
+
+    });
+
+   	ReactDOM.render(
+   		<HelloMessage />,
+   		document.getElementById('example')
+   	)
+
+    </script>
+  </body>
+</html>
